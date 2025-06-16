@@ -1,11 +1,7 @@
 /* import font from fonts tab */
 @font-face{
   font-family: GamesFont;
-  src: url('fonts/WarioLand4CHMC.eot'); /* IE9 Compat Modes */
-  src: url('fonts/WarioLand4CHMC.eot') format('embedded-opentype'), /* IE6-IE8 */
-        url('fonts/WarioLand4CHMC.woff') format('woff'), /* Modern Browsers */
-        url('fonts/WarioLand4CHMC.ttf')  format('truetype'), /* Safari, Android, iOS */
-        url('fonts/WarioLand4CHMC.svg') format('svg'); /* Legacy iOS */
+  src: @import url('https://fonts.cdnfonts.com/css/warioland4chmc');
 }
 
 /* use imported font */
