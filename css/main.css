@@ -6,6 +6,9 @@
   font-family: 'WarioLand4CHMC', sans-serif;
 }
 
+.card-text{
+  padding: 15px;
+}
 /* make background video cover whole page */
 #backgroundvideo{
   position: fixed;
