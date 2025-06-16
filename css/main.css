@@ -7,6 +7,7 @@
 }
 
 .card-text{
+  border-top: 1px solid rgba(0, 0, 0, .125);
   padding: 15px;
 }
 /* make background video cover whole page */
