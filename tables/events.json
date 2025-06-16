@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Women in Tech Summit",
+    "image": "womenintechsummit.png",
+    "description": "The Perspektywy Women in Tech Summit 2026 - the most empowering, energetic, inspiring, and boldest event in Europe and Asia for women in STEM, Tech & IT - will take place on 10 and 11 June 2026 in Warsaw! We can’t wait to meet you in person.",
+    "price": "FREE-$250",
+    "date": "10 June 2026",
+    "enddate": "11 June 2026",
+    "link": "https://womenintechsummit.pl/"
+  },
+  {
+    "name": "2025 Games for Change Festival",
+    "image": "gamesforchangefestival.png",
+    "description": "Drawing inspiration from purposeful design and innovation, the 2025 Games for Change Festival theme is \"Designing for Tomorrow\". We'll bring together diverse voices from industry veterans to next-generation innovators to explore how games and XR can break down barriers between generations, perspectives, and sectors. The Festival will showcase how collaborative design and play can transform entertainment into measurable impact across critical areas like education, health, sustainability, and more.",
+    "price": "$775-$1200",
+    "date": "26 June 2025",
+    "enddate": "27 June 2025",
+    "link": "https://festival.gamesforchange.org/"
+  },
+  {
+    "name": "MCV/Develop Women In Games Awards",
+    "image": "mcvwomeningamesawards.png",
+    "description": "The MCV/Develop Women In Games Awards will take place on 25 September 2025. The event will be taking place at the America Square Conference Centre",
+    "price": "FREE",
+    "date": "25 September 2025",
+    "enddate": "",
+    "link": "https://womeningamesawards.com/"
+  },
+    {
+    "name": "Women In Games Annual Global Conference",
+    "image": "womeningames.jpg",
+    "description": "Our welcoming and inclusive online platform will enable you to join our extensive and growing global community from wherever you are in the world. Join us to  hear our inspiring Conference speakers discussing the multi-layered, evolving trajectory of play in contemporary life.",
+    "price": "£2-£200",
+    "date": "10 October 2025",
+    "enddate": "",
+    "link": "https://www.womeningames.org/gather-and-connect-with-us-throughout-2025/"
+  }
+]
