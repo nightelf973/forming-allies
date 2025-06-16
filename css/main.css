@@ -10,7 +10,7 @@
   height: 650px;
 }
 .event-card img{
-  height:250px;
+  height:250px !important;
   object-fit:cover;
 }
 
