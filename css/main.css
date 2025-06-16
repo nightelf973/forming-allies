@@ -6,14 +6,6 @@
   font-family: 'WarioLand4CHMC', sans-serif;
 }
 
-.event-card{
-  height: 650px;
-}
-.event-card img{
-  height:250px !important;
-  object-fit:cover;
-}
-
 .card-text{
   border-top: 1px solid rgba(0, 0, 0, .125);
   padding: 15px;
@@ -91,12 +83,6 @@ body{
   top: 0;
 }
 
-/* make image cover whole card for events/groups page */
-.card-block img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 /* avoid content overlapping navbar */
 .nav-margin{
