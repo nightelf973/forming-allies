@@ -1,12 +1,9 @@
 /* import font from fonts tab */
-@font-face{
-  font-family: GamesFont;
-  src: @import url('https://fonts.cdnfonts.com/css/warioland4chmc');
-}
+@import url('https://fonts.cdnfonts.com/css/warioland4chmc');
 
 /* use imported font */
 .games{
-  font-family: GamesFont;
+  font-family: 'WarioLand4CHMC', sans-serif;
 }
 
 /* make background video cover whole page */
