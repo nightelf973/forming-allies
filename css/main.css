@@ -6,6 +6,14 @@
   font-family: 'WarioLand4CHMC', sans-serif;
 }
 
+.event-card{
+  height: 650px;
+}
+.event-card img{
+  height:250px;
+  object-fit:cover;
+}
+
 .card-text{
   border-top: 1px solid rgba(0, 0, 0, .125);
   padding: 15px;
