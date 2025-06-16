@@ -12,22 +12,15 @@
     <title>Forming Allies</title>
     <link rel="icon" href="/forming-allies/images/icon.ico">
     <style>
-      .group-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* explicitly 3 columns */
-        gap: 30px;
+      .card-columns-masonry {
+        column-count: 3;
+        column-gap: 30px;
       }
       
-      @media (max-width: 992px) {
-        .group-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      
-      @media (max-width: 600px) {
-        .group-grid {
-          grid-template-columns: 1fr;
-        }
+      .card-columns-masonry .card {
+        display: inline-block; /* prevents breaking across columns */
+        width: 100%;          /* full width inside column */
+        margin-bottom: 30px;  /* vertical gap between cards */
       }
     </style>
   </head>
@@ -96,117 +89,241 @@
         </ul>
       </div>
     </nav>
-    <div id="items">
-  <div class="container mt-20">
-    <!-- Section Header -->
-    <div class="card headr">
-      <div class="card-body">
-        <h3 class="card-title games centered">Online Forums/Groups for Female Gamers</h3>
-      </div>
-    </div>
-
-    <!-- Grid Layout for Cards -->
-    <div class="group-grid mt-25">
-      <!-- Card 1 -->
-      <div class="card">
-        <div class="card-header games h-100"><h4><strong>Girl Gamer Subreddit</strong></h4></div>
-        <img class="card-img-top" src="/forming-allies/images/girlgamerreddit.png" alt="girl gamer reddit logo">
+<div id="items">
+    <div class="container mt-20">
+      <!-- Section Header -->
+      <div class="card headr">
         <div class="card-body">
-          <p class="card-text games">This is a community space for ladies to hang out, talk about gaming, and game together. We also discuss topics around women in geek culture and debrief about experiences that occur as a result of their gender. Folks of all genders and identities are welcome to join discussions here.</p>
-          <a href="https://www.reddit.com/r/GirlGamers/" class="btn btn-primary">Subreddit</a>
+          <h3 class="card-title games centered">
+            Online Forums/Groups for Female Gamers
+          </h3>
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="card">
-        <div class="card-header games h-100"><h4><strong>Women in Games</strong></h4></div>
-        <img class="card-img-top" src="/forming-allies/images/womeningames.jpg" alt="women in games logo">
-        <div class="card-body">
-          <p class="card-text games">We are activists... We believe in more people, more diversity and more perspectives.</p>
-          <a href="https://www.womeningames.org/" class="btn btn-primary">Website</a>
-          <a href="https://discord.com/invite/4HpQuGRtRy" class="btn btn-primary">Discord</a>
+      <!-- Masonry Columns Container -->
+      <div class="card-columns-masonry mt-25">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-header games h-100">
+            <h4><strong>Girl Gamer Subreddit</strong></h4>
+          </div>
+          <img
+            class="card-img-top"
+            src="/forming-allies/images/girlgamerreddit.png"
+            alt="girl gamer reddit logo"
+          />
+          <div class="card-body">
+            <p class="card-text games">
+              This is a community space for ladies to hang out, talk about gaming,
+              and game together. We also discuss topics around women in geek
+              culture and debrief about experiences that occur as a result of their
+              gender. Folks of all genders and identities are welcome to join
+              discussions here.
+            </p>
+            <a href="https://www.reddit.com/r/GirlGamers/" class="btn btn-primary"
+              >Subreddit</a
+            >
+          </div>
         </div>
-      </div>
 
-      <!-- Card 3 -->
-      <div class="card">
-        <div class="card-header games h-100"><h4><strong>Women in Games Esports</strong></h4></div>
-        <img class="card-img-top" src="/forming-allies/images/womeningames.jpg" alt="women in games logo">
-        <div class="card-body">
-          <p class="card-text games">Esports is entertaining, exciting, and engaging... We intend to be part of the community evolving the future shape of this sector.</p>
-          <a href="https://www.womeningames.org/esports/" class="btn btn-primary">Website</a>
-          <a href="https://discord.gg/8fxf5kX8" class="btn btn-primary">Discord</a>
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-header games h-100">
+            <h4><strong>Women in Games</strong></h4>
+          </div>
+          <img
+            class="card-img-top"
+            src="/forming-allies/images/womeningames.jpg"
+            alt="women in games logo"
+          />
+          <div class="card-body">
+            <p class="card-text games">
+              We are activists... We believe in more people, more diversity and
+              more perspectives.
+            </p>
+            <a href="https://www.womeningames.org/" class="btn btn-primary"
+              >Website</a
+            >
+            <a href="https://discord.com/invite/4HpQuGRtRy" class="btn btn-primary"
+              >Discord</a
+            >
+          </div>
         </div>
-      </div>
 
-      <!-- Card 4 -->
-      <div class="card">
-        <div class="card-header games h-100"><h4><strong>Women in Esports</strong></h4></div>
-        <img class="card-img-top" src="/forming-allies/images/womeninesports.png" alt="women in esports logo">
-        <div class="card-body">
-          <p class="card-text games">The Women in Esports initiative aims to create a welcoming community which encourages more women (including trans and cis women) and femme identifying/femme presenting non-binary players to take part in esports tournaments at any level.</p>
-          <a href="https://britishesports.org/women-in-esports-campaign/" class="btn btn-primary">Website</a>
-          <a href="https://discord.com/invite/wQQEeKH" class="btn btn-primary">Discord</a>
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-header games h-100">
+            <h4><strong>Women in Games Esports</strong></h4>
+          </div>
+          <img
+            class="card-img-top"
+            src="/forming-allies/images/womeningames.jpg"
+            alt="women in games logo"
+          />
+          <div class="card-body">
+            <p class="card-text games">
+              Esports is entertaining, exciting, and engaging... We intend to be
+              part of the community evolving the future shape of this sector.
+            </p>
+            <a href="https://www.womeningames.org/esports/" class="btn btn-primary"
+              >Website</a
+            >
+            <a href="https://discord.gg/8fxf5kX8" class="btn btn-primary">Discord</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Card 5 -->
-      <div class="card">
-        <div class="card-header games h-100"><h4><strong>the *gameHERS</strong></h4></div>
-        <img class="card-img-top" src="/forming-allies/images/thegamehers.png" alt="the gamerHERS logo">
-        <div class="card-body">
-          <p class="card-text games">the*gameHERs is a women-led community dedicated to amplifying and centering the voices of women gamers and gamers of marginalized genders. This is a sexist-free space for the casual players, hardcore gamers, streamers, techies and more.</p>
-          <a href="https://thegamehers.com/" class="btn btn-primary">Website</a>
-          <a href="https://discord.com/invite/thegamehers" class="btn btn-primary">Discord</a>
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="card-header games h-100">
+            <h4><strong>Women in Esports</strong></h4>
+          </div>
+          <img
+            class="card-img-top"
+            src="/forming-allies/images/womeninesports.png"
+            alt="women in esports logo"
+          />
+          <div class="card-body">
+            <p class="card-text games">
+              The Women in Esports initiative aims to create a welcoming community
+              which encourages more women (including trans and cis women) and femme
+              identifying/femme presenting non-binary players to take part in
+              esports tournaments at any level.
+            </p>
+            <a
+              href="https://britishesports.org/women-in-esports-campaign/"
+              class="btn btn-primary"
+              >Website</a
+            >
+            <a href="https://discord.com/invite/wQQEeKH" class="btn btn-primary"
+              >Discord</a
+            >
+          </div>
         </div>
-      </div>
 
-      <!-- Card 6 -->
-      <div class="card">
-        <div class="card-header games h-100"><h4><strong>Girl Gamers</strong></h4></div>
-        <img class="card-img-top" src="/forming-allies/images/girlgamers.jpg" alt="girl gamers logo">
-        <div class="card-body">
-          <p class="card-text games">Girl Gamers is the largest, safest, and most active community on Steam that supports female gamers. This group aims to eliminate the gap between genders and illuminate the fact that a gamer is a gamer, regardless of gender, sexuality, or life choices.</p>
-          <a href="https://steamcommunity.com/groups/GirlGamers" class="btn btn-primary">Steam Group</a>
-          <a href="https://discord.com/invite/CAjP4hy" class="btn btn-primary">Discord</a>
+        <!-- Card 5 -->
+        <div class="card">
+          <div class="card-header games h-100">
+            <h4><strong>the *gameHERS</strong></h4>
+          </div>
+          <img
+            class="card-img-top"
+            src="/forming-allies/images/thegamehers.png"
+            alt="the gamerHERS logo"
+          />
+          <div class="card-body">
+            <p class="card-text games">
+              the*gameHERs is a women-led community dedicated to amplifying and
+              centering the voices of women gamers and gamers of marginalized
+              genders. This is a sexist-free space for the casual players, hardcore
+              gamers, streamers, techies and more.
+            </p>
+            <a href="https://thegamehers.com/" class="btn btn-primary">Website</a>
+            <a href="https://discord.com/invite/thegamehers" class="btn btn-primary"
+              >Discord</a
+            >
+          </div>
         </div>
-      </div>
 
-      <!-- Card 7 -->
-      <div class="card">
-        <div class="card-header games h-100"><h4><strong>PMS Clan</strong></h4></div>
-        <img class="card-img-top" src="/forming-allies/images/PMSclan.png" alt="PMS clan logo">
-        <div class="card-body">
-          <p class="card-text games">PMS Clan is a video game community committed to breaking down walls, stereotypes, and boundaries for female gamers by providing a pro-women environment, fostering competitive spirit, and building an inclusive support network.</p>
-          <a href="https://www.pmsclan.com/" class="btn btn-primary">Website</a>
-          <a href="https://discord.com/invite/pmsclan" class="btn btn-primary">Discord</a>
+        <!-- Card 6 -->
+        <div class="card">
+          <div class="card-header games h-100">
+            <h4><strong>Girl Gamers</strong></h4>
+          </div>
+          <img
+            class="card-img-top"
+            src="/forming-allies/images/girlgamers.jpg"
+            alt="girl gamers logo"
+          />
+          <div class="card-body">
+            <p class="card-text games">
+              Girl Gamers is the largest, safest, and most active community on Steam
+              that supports female gamers. This group aims to eliminate the gap
+              between genders and illuminate the fact that a gamer is a gamer,
+              regardless of gender, sexuality, or life choices.
+            </p>
+            <a
+              href="https://steamcommunity.com/groups/GirlGamers"
+              class="btn btn-primary"
+              >Steam Group</a
+            >
+            <a href="https://discord.com/invite/CAjP4hy" class="btn btn-primary"
+              >Discord</a
+            >
+          </div>
         </div>
-      </div>
 
-      <!-- Card 8 -->
-      <div class="card">
-        <div class="card-header games h-100"><h4><strong>Sugar Gamers</strong></h4></div>
-        <img class="card-img-top" src="/forming-allies/images/sugargamers.png" alt="sugar gamers logo">
-        <div class="card-body">
-          <p class="card-text games">Sugar Gamers has evolved into a diverse group of trendsetters and aficionados within the worlds of technology, gaming, and the arts. It was founded in 2009 as a community for female geeks and gamers from all walks of life.</p>
-          <a href="https://sugargamers.com/" class="btn btn-primary">Website</a>
-          <a href="https://discord.com/invite/ePdgk5Q" class="btn btn-primary">Discord</a>
+        <!-- Card 7 -->
+        <div class="card">
+          <div class="card-header games h-100">
+            <h4><strong>PMS Clan</strong></h4>
+          </div>
+          <img
+            class="card-img-top"
+            src="/forming-allies/images/PMSclan.png"
+            alt="PMS clan logo"
+          />
+          <div class="card-body">
+            <p class="card-text games">
+              PMS Clan is a video game community committed to breaking down walls,
+              stereotypes, and boundaries for female gamers by providing a
+              pro-women environment, fostering competitive spirit, and building an
+              inclusive support network.
+            </p>
+            <a href="https://www.pmsclan.com/" class="btn btn-primary">Website</a>
+            <a href="https://discord.com/invite/pmsclan" class="btn btn-primary"
+              >Discord</a
+            >
+          </div>
         </div>
-      </div>
 
-      <!-- Card 9 -->
-      <div class="card">
-        <div class="card-header games h-100"><h4><strong>Global Gaming Women</strong></h4></div>
-        <img class="card-img-top" src="/forming-allies/images/globalgamingwomen.jpg" alt="global gaming women logo">
-        <div class="card-body">
-          <p class="card-text games">GGW brings together women from all segments of gaming in an effort to enrich their professional and personal lives, with a broad network that allows peers to connect and nurture emerging women leaders.</p>
-          <a href="https://www.globalgamingwomen.org/" class="btn btn-primary">Website</a>
+        <!-- Card 8 -->
+        <div class="card">
+          <div class="card-header games h-100">
+            <h4><strong>Sugar Gamers</strong></h4>
+          </div>
+          <img
+            class="card-img-top"
+            src="/forming-allies/images/sugargamers.png"
+            alt="sugar gamers logo"
+          />
+          <div class="card-body">
+            <p class="card-text games">
+              Sugar Gamers has evolved into a diverse group of trendsetters and
+              aficionados within the worlds of technology, gaming, and the arts. It
+              was founded in 2009 as a community for female geeks and gamers from
+              all walks of life.
+            </p>
+            <a href="https://sugargamers.com/" class="btn btn-primary">Website</a>
+            <a href="https://discord.com/invite/ePdgk5Q" class="btn btn-primary"
+              >Discord</a
+            >
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="card">
+          <div class="card-header games h-100">
+            <h4><strong>Global Gaming Women</strong></h4>
+          </div>
+          <img
+            class="card-img-top"
+            src="/forming-allies/images/globalgamingwomen.jpg"
+            alt="global gaming women logo"
+          />
+          <div class="card-body">
+            <p class="card-text games">
+              GGW brings together women from all segments of gaming in an effort to
+              enrich their professional and personal lives, with a broad network
+              that allows peers to connect and nurture emerging women leaders.
+            </p>
+            <a href="https://www.globalgamingwomen.org/" class="btn btn-primary"
+              >Website</a
+            >
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
       <!--footer info-->
     <footer class="page-footer text-white bg-dark fixed-bottom">
       <span class="footertext">Megan Ross ~ 1905681</span>
