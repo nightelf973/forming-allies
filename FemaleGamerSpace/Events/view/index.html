@@ -73,9 +73,9 @@
         events.forEach(event => {
           const card = document.createElement('div');
           
-          card.className = 'col-md-6';
+          card.className = 'col-md-6 d-flex';
           card.innerHTML = `
-            <div class="card nav-margin mb-4">
+            <div class="card h-100 w-100 d-flex flex-column nav-margin mb-4">
               <div class="card-header games h-100 black-font">
                 <strong>${event.name}</strong>
               </div>
@@ -85,7 +85,7 @@
                 <p class="padding-side"><strong>Price:</strong> &pound;${event.price}</p>
                 <p class="padding-side"><strong>Date: </strong>${event.date}${event.enddate ? ' - ' + event.enddate : ''}</p>
               </div>
-              <div class="card-footer">
+              <div class="card-footer mt-auto">
                 <a href="${event.link}" class="btn btn-primary" target="_blank">MORE INFO</a>
               </div>
             </div>
