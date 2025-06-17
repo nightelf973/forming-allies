@@ -8,6 +8,13 @@
 .footertext a {
     color: #fc9f99;
 }
+.dropdown-menu{
+  background-color: #343a40;
+}
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    background-color: #343a40;
+}
 .carousel-control-prev, .carousel-control-next {
     width: 20px;
     opacity: 1;
