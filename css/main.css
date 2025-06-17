@@ -7,12 +7,15 @@
 }
 
 .event-card:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 .event-card {
     transition: transform .2s;
 }
-
+.event-card a{
+    color: rgb(33, 37, 41);
+    text-decoration: none;
+}
 .card-text{
   border-top: 1px solid rgba(0, 0, 0, .125);
   padding: 15px;
