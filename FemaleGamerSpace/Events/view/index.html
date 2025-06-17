@@ -76,7 +76,6 @@
           card.className = 'col-lg-6 d-flex';
           card.innerHTML = `
             <div class="card flex-fill event-card nav-margin mb-4">
-          <a href="${event.link}">
               <div class="card-header games black-font">
                 <strong>${event.name}</strong>
               </div>
@@ -84,11 +83,11 @@
                 <img src="/forming-allies/images/${event.image}" class="img-fluid" alt="${event.name}">
                 <p class="card-text padding-side m-0">${event.description}</p>
                 <p class="card-text padding-side m-0"><strong>Price: </strong>${event.price}</p>
+                <p class="card-text padding-side m-0"><strong>Date: </strong>${event.date}${event.enddate ? ' - ' + event.enddate : ''}</p>
               </div>
               <div class="card-footer mt-auto">
-                ${event.date}${event.enddate ? ' - ' + event.enddate : ''}
+                <a href="${event.link}" class="btn btn-primary" target="_blank">MORE INFO</a>
               </div>
-            </a>
             </div>
           `;
           container.appendChild(card);
