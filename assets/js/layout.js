@@ -6,8 +6,9 @@ fetch('/forming-allies/includes/navbar.html')
     })
     .then(() => {
       var activeInput = document.getElementById('active-nav-title').value;
-        console.log(activeInput, document.getElementById(activeInput));
-      document.getElementById(activeInput).classList.add('active');  
+      document.getElementById(activeInput).classList.add('active'); 
+    var activeInputTwo = document.getElementById('active-nav-title-two')?.value;
+    if (activeInputTwo) document.getElementById(activeInputTwo).classList.add('active'); 
       if (localStorage.getItem("login") === "true") {
         const discussion = document.getElementById('discussion-link');
         const login = document.getElementById('login-logout-section');
