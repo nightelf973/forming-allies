@@ -75,8 +75,8 @@
 
           card.className = 'col-lg-6 d-flex';
           card.innerHTML = `
-          <a href="${event.link}">
             <div class="card flex-fill event-card nav-margin mb-4">
+          <a href="${event.link}">
               <div class="card-header games black-font">
                 <strong>${event.name}</strong>
               </div>
@@ -88,8 +88,8 @@
               <div class="card-footer mt-auto">
                 ${event.date}${event.enddate ? ' - ' + event.enddate : ''}
               </div>
-            </div>
             </a>
+            </div>
           `;
           container.appendChild(card);
         });
