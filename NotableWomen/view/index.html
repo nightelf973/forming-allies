@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/forming-allies/css/main.css">
+    <meta name="author" content="Megan Ross">
+    <title>Forming Allies</title>
+    <link rel="icon" href="/forming-allies/images/icon.ico">
+  </head>
+
+  <body>
+    <!--background video-->
+    <video playsinline autoplay muted loop id="backgroundvideo">
+      <source src="/forming-allies/videos/background.webm" type="video/webm">
+    </video>
+    <!--navbar-->
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark fixed-top">
+      <a class="navbar-brand" href="/forming-allies/">Forming Allies</a>
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#myNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--navbar icon that links to main site page-->
+      <a href="/forming-allies/" class="navbar-brand"><img class="pentaicon" src="/forming-allies/images/icon.ico"></a>
+      <!--navbar collapses when device size gets small enough-->
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="navbar-nav">
+          <!--navbar item-->
+          <li class="nav-item">
+            <a class="nav-link" href="/forming-allies/">
+              Home
+            </a>
+          </li>
+          <!--navbar dropdown menu-->
+          <li class="nav-item dropdown">  
+            <a class="nav-link dropdown-toggle" href="#" id="myNavbarDropdown" data-toggle="dropdown">
+            GameHer Space
+            </a>
+            <div class="dropdown-menu">
+              <!--dropdown item-->
+              <a class="dropdown-item" href="/forming-allies/FemaleGamerSpace/Events/view/">
+                Events
+              </a>
+              <!--dropdown item-->
+              <a class="dropdown-item" href="/forming-allies/FemaleGamerSpace/Groups/view/">
+                Groups
+              </a>
+            </div>
+          </li>
+          <!--navbar item-->
+          <li class="nav-item">
+            <a class="nav-link" href="/forming-allies/Statistics/view/">
+              Statistics
+            </a>
+          </li>
+          <!--navbar item-->
+          <li class="nav-item">
+            <a class="nav-link" href="/forming-allies/Quiz/view/">
+              Quiz
+            </a>
+          </li>
+          <!--navbar item-->
+          <li class="nav-item">
+            <a class="nav-link" href="/forming-allies/BecomeAnAlly/view/">
+              Become an Ally
+            </a>
+          </li>
+          <!--navbar item-->
+          <li class="nav-item">
+            <a class="nav-link active" href="/forming-allies/NotableWomen/view/">
+              Notable Women
+            </a>
+          </li>
+<li class='nav-item'><a class='nav-link' href='/forming-allies/Discussion/view/'>Discussion</a></li>
+          <!--navbar item-->
+          <li class="nav-item">
+            <a class="nav-link" href="/forming-allies/Testimonies/view/">
+              Testimonies
+            </a>
+          </li>
+        </ul>
+        <!--right hand navbar-->
+        <ul class="nav navbar-nav ml-auto">
+<li><a class='nav-link active' href='/forming-allies/Account/view/index.php'><span class='glyphicon glyphicon-user'></span>Login/Sign Up</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--carousel slide indicators-->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="6000">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+      </ol>
+      <div class="carousel-inner">
+        <!--carousel slide-->
+        <div class="carousel-item active">
+          <img class=" carousel-image w-100 car-item" src="/forming-allies/images/mabel.jpg" alt="Mabel Addis">
+          <div class="carousel-caption less-padding black-font">
+            <div class ="card">
+              <div class="card-body less-padding">
+                <h3 class="card-title games centered">Mabel Addis</h3>
+                <p class='games'>Mabel Addis was the first ever female video game designer. She created The Sumerian Game in the 1960s. This was an educational game where players played as the ruler of a country and used resource management to keep the citizens happy. This was the first recorded game to have a narrative. Mabel not only was the first-ever female video game creator, but significantly contributed to the advancement of high-definition graphics and narration based games.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--carousel slide-->
+        <div class="carousel-item">
+          <img class=" carousel-image w-100 car-item" src="/forming-allies/images/danielle.png" alt="Danielle Bunten Berry">
+          <div class="carousel-caption less-padding black-font">
+            <div class ="card">
+              <div class="card-body less-padding">
+                <h3 class="card-title games centered">Danielle Bunten Berry</h3>
+                <p class='games'>Danielle Bunten Berry was a game designer best know for the 1983 game M.U.L.E. She earned a B.S. in industrial engineering and then began programming text-based game as a HOBBY and went on to make what is considered one of the best games of all time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--carousel slide-->
+        <div class="carousel-item">
+          <img class=" carousel-image w-100 car-item" src="/forming-allies/images/scarlett.jpg" alt="Sasha Hostyn">
+          <div class="carousel-caption less-padding black-font">
+            <div class ="card">
+              <div class="card-body less-padding">
+                <h3 class="card-title games centered">Scarlett (Sasha Hostyn)</h3>
+                <p class='games'>Sasha Hostyn, popularly known as "Scarlett", is currently the top-earning female Esports player. She was the first woman to win a major StarCraft II tournament. In 2013, she climbed to global rank 21 and by 2014 she had won first place in seven tournaments.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--carousel slide-->
+        <div class="carousel-item">
+          <img class=" carousel-image w-100 car-item" src="/forming-allies/images/liooon.png" alt="Xiaomeng Li">
+          <div class="carousel-caption less-padding black-font">
+            <div class ="card">
+              <div class="card-body less-padding">
+                <h3 class="card-title games centered">Liooon (Li, Xiaomeng)</h3>
+                <p class='games'>Liooon was the first woman to win the Hearthstone Grandmasters Global Finals, a BlizzCon Esports tournament. After winning this championship, she revealed that whilst in line for a tournament, a man once said to her  "If you are a girl, you should not wait in line here. It's not for you.". She encourages women to believe in themselves and participate despite the toxicity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--carousel slide-->
+        <div class="carousel-item">
+          <img class=" carousel-image w-100 car-item" src="/forming-allies/images/yoko.jpg" alt="Yoko Shimomura">
+          <div class="carousel-caption less-padding black-font">
+            <div class ="card">
+              <div class="card-body less-padding">
+                <h3 class="card-title games centered">Yoko Shimomura</h3>
+                <p class='games'>Yoko Shimomura is an extremely talented composer who primarily produces piano pieces. Her work can be heard in games such as Kingdom Hearts, Street Fighter, Final Fantasy XV and Super Smash Bros Ultimate and many others. The title track of Kingdom Hearts has been ranked the fourth-best RPG title track of all time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--carousel slide-->
+        <div class="carousel-item">
+          <img class=" carousel-image w-100 car-item" src="/forming-allies/images/kim.png" alt="Kim Swift">
+          <div class="carousel-caption less-padding black-font">
+            <div class ="card">
+              <div class="card-body less-padding">
+                <h3 class="card-title games centered">Kim Swift</h3>
+                <p class='games'>Kim Swift shot to fame in 2007 after designing Portal. Many critics cited Portal the best game of the year. It is estimated that around 8 million copies of Portal have been sold and it is undeniably one of the most famous games of the 2000s. Since Portal, Kim has worked on Left 4 Dead, Left 4 Dead 2 and Star Wars Battlefront II, all of which have been as massively popular as Portal.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--carousel previous slide control-->
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon bigger" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+      </a>
+      <!--carousel next slide control-->
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon bigger" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+      </a>
+    </div>
+    
+    <!--footer info-->
+    <footer class="page-footer text-white bg-dark fixed-bottom">
+      <span class="footertext">Megan Ross ~ 1905681</span>
+    </footer>
+  </body>
+</html>
