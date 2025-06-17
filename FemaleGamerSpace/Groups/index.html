@@ -16,7 +16,6 @@
             border-top: 1px solid rgba(0, 0, 0, .125);
       }
       .card-columns-masonry {
-        column-count: 3;
         column-gap: 30px;
       }
       
@@ -25,6 +24,11 @@
         width: 100%;          /* full width inside column */
         margin-bottom: 30px;  /* vertical gap between cards */
       }
+      @media (min-width: 992px) {
+      .card-columns-masonry {
+        column-count: 3;
+      }
+    }
     </style>
   </head>
   <body>
