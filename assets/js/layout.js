@@ -6,6 +6,7 @@ fetch('/forming-allies/includes/navbar.html')
     })
     .then(() => {
       var activeInput = document.getElementById('active-nav-title').value;
+        console.log(activeInput, document.getElementById(activeInput));
       document.getElementById(activeInput).classList.add('active');  
       if (localStorage.getItem("login") === "true") {
         const discussion = document.getElementById('discussion-link');
