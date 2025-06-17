@@ -6,6 +6,13 @@
   font-family: 'WarioLand4CHMC', sans-serif;
 }
 
+.event-card:hover{
+    transform: scale(1.1);
+}
+.event-card {
+    transition: transform .2s;
+}
+
 .card-text{
   border-top: 1px solid rgba(0, 0, 0, .125);
   padding: 15px;
