@@ -5,6 +5,9 @@
 .games{
   font-family: 'WarioLand4CHMC', sans-serif;
 }
+.footertext a {
+    color: #fc9f99;
+}
 .carousel-control-prev, .carousel-control-next {
     width: 20px;
     opacity: 1;
