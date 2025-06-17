@@ -5,7 +5,13 @@
 .games{
   font-family: 'WarioLand4CHMC', sans-serif;
 }
-
+.carousel-control-prev, .carousel-control-next {
+    width: 20px;
+    opacity: 1;
+}
+.carousel-inner {
+    padding: 0 50px;
+}
 .event-card:hover{
     transform: scale(1.05);
 }
