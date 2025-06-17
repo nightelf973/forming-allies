@@ -8,6 +8,7 @@
 .carousel-control-prev, .carousel-control-next {
     width: 20px;
     opacity: 1;
+  margin: 10px;
 }
 .carousel-inner {
     padding: 0 50px;
