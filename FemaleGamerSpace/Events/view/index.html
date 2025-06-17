@@ -82,10 +82,12 @@
               <div class="card-block games">
                 <img src="/forming-allies/images/${event.image}" class="img-fluid" alt="${event.name}">
                 <p class="card-text padding-side m-0">${event.description}</p>
-                <p class="card-text padding-side m-0"><strong>Price: </strong>${event.price}</p>
               </div>
-              <div class="card-footer mt-auto">
-                ${event.date}${event.enddate ? ' - ' + event.enddate : ''}
+              <div class="mt-auto">
+                <p class="card-text padding-side"><strong>Price: </strong>${event.price}</p>
+                <div class="card-footer">
+                  ${event.date}${event.enddate ? ' - ' + event.enddate : ''}
+                </div>
               </div>
             </div>
           `;
