@@ -42,13 +42,15 @@
 
 /* make carousel image responsive */
 .carousel-image{
-  width: 65vw !important;
-  height: 55vh;
-  display: block;
-  margin: 0 auto;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-top: 40px !important;
+max-height: 60vh;
+    max-width: 65%;
+    /* width: 65vw !important; */
+    /* height: 65%; */
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-top: 40px !important;
 }
 
 /* header margin to avoid content overlapping navbar*/
