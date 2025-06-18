@@ -8,6 +8,9 @@
 .footertext a {
     color: #fc9f99;
 }
+.card-footer .btn{
+  margin-right: 10px;
+}
 .dropdown-menu{
   background-color: #343a40;
 }
