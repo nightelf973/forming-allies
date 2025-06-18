@@ -1,0 +1,81 @@
+[
+  {
+    "name": "PMS Clan",
+    "image": "PMSclan.png",
+    "description": "PMS Clan is a video game community committed to breaking down walls, stereotypes, and boundaries for female gamers by providing a pro-women environment, fostering competitive spirit, and building an inclusive support network.",
+    "buttons": [
+      { "link": "https://www.pmsclan.com/", "type": "Website" },
+      { "link": "https://discord.com/invite/pmsclan", "type": "Discord" }
+    ]
+  },
+  {
+    "name": "Girl Gamers",
+    "image": "girlgamers.jpg",
+    "description": "Girl Gamers is the largest, safest, and most active community on Steam that supports female gamers. This group aims to eliminate the gap between genders and illuminate the fact that a gamer is a gamer, regardless of gender, sexuality, or life choices.",
+    "buttons": [
+      { "link": "https://steamcommunity.com/groups/GirlGamers", "type": "Steam Group" },
+      { "link": "https://discord.com/invite/CAjP4hy", "type": "Discord" }
+    ]
+  },
+  {
+    "name": "Women in Games",
+    "image": "womeningames.jpg",
+    "description": "We are activists... We believe in more people, more diversity and more perspectives.",
+    "buttons": [
+      { "link": "https://www.womeningames.org/", "type": "Website" },
+      { "link": "https://discord.com/invite/4HpQuGRtRy", "type": "Discord" }
+    ]
+  },
+  {
+    "name": "Girl Gamer Subreddit",
+    "image": "girlgamerreddit.png",
+    "description": "This is a community space for ladies to hang out, talk about gaming, and game together. We also discuss topics around women in geek culture and debrief about experiences that occur as a result of their gender. Folks of all genders and identities are welcome to join discussions here.",
+    "buttons": [
+      { "link": "https://www.reddit.com/r/GirlGamers/", "type": "Subreddit" }
+    ]
+  },
+  {
+    "name": "Global Gaming Women",
+    "image": "globalgamingwomen.jpg",
+    "description": "GGW brings together women from all segments of gaming in an effort to enrich their professional and personal lives, with a broad network that allows peers to connect and nurture emerging women leaders.",
+    "buttons": [
+      { "link": "https://www.globalgamingwomen.org/", "type": "Website" }
+    ]
+  },
+  {
+    "name": "Sugar Gamers",
+    "image": "sugargamers.png",
+    "description": "Sugar Gamers has evolved into a diverse group of trendsetters and aficionados within the worlds of technology, gaming, and the arts. It was founded in 2009 as a community for female geeks and gamers from all walks of life.",
+    "buttons": [
+      { "link": "https://sugargamers.com/", "type": "Website" },
+      { "link": "https://discord.com/invite/ePdgk5Q", "type": "Discord" }
+    ]
+  },
+  {
+    "name": "Femme Gaming",
+    "image": "femmegaming.png",
+    "description": "Femme Gaming is a women-led organization dedicated to promoting diversity and inclusion within the gaming and esports industry. We aim to create a safe space where everyone, regardless of gender, can feel safe, supported, and empowered to showcase their talents in the gaming and esports world.",
+    "buttons": [
+      { "link": "https://femmegaming.gg/", "type": "Website" },
+      { "link": "https://femmegaming.gg/join-the-femme-army/", "type": "Discord" }
+    ]
+  },
+  {
+    "name": "Women in Esports",
+    "image": "womeninesports.png",
+    "description": "The Women in Esports initiative aims to create a welcoming community which encourages more women (including trans and cis women) and femme identifying/femme presenting non-binary players to take part in esports tournaments at any level.",
+    "buttons": [
+      { "link": "https://britishesports.org/women-in-esports-campaign/", "type": "Website" },
+      { "link": "https://discord.com/invite/wQQEeKH", "type": "Discord" }
+    ]
+  },
+  {
+    "name": "the *gameHERS",
+    "image": "thegamehers.png",
+    "description": "the*gameHERs is a women-led community dedicated to amplifying and centering the voices of women gamers and gamers of marginalized genders. This is a sexist-free space for the casual players, hardcore gamers, streamers, techies and more.",
+    "buttons": [
+      { "link": "https://thegamehers.com/", "type": "Website" },
+      { "link": "https://discord.com/invite/thegamehers", "type": "Discord" }
+    ]
+  }
+]
