@@ -9,10 +9,11 @@
     color: #fc9f99;
 }
 .form-check{
-  margin-left: 0px;
+  padding-left: 0px;
 }
 .form-check-input{
-  top: 1px;
+    left: 200px;
+    top: 1px;
 }
 .card-footer .btn{
   margin-right: 10px;
