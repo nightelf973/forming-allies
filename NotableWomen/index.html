@@ -26,79 +26,8 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
       </ol>
-      <div class="carousel-inner">
-        <!--carousel slide-->
-        <div class="carousel-item active">
-          <img class=" carousel-image w-100 car-item" src="/forming-allies/assets/images/mabel.jpg" alt="Mabel Addis">
-          <div class="carousel-caption less-padding black-font">
-            <div class ="card">
-              <div class="card-body less-padding">
-                <h3 class="card-title games centered">Mabel Addis</h3>
-                <p class='games'>Mabel Addis was the first ever female video game designer. She created The Sumerian Game in the 1960s. This was an educational game where players played as the ruler of a country and used resource management to keep the citizens happy. This was the first recorded game to have a narrative. Mabel not only was the first-ever female video game creator, but significantly contributed to the advancement of high-definition graphics and narration based games.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--carousel slide-->
-        <div class="carousel-item">
-          <img class=" carousel-image w-100 car-item" src="/forming-allies/assets/images/danielle.png" alt="Danielle Bunten Berry">
-          <div class="carousel-caption less-padding black-font">
-            <div class ="card">
-              <div class="card-body less-padding">
-                <h3 class="card-title games centered">Danielle Bunten Berry</h3>
-                <p class='games'>Danielle Bunten Berry was a game designer best know for the 1983 game M.U.L.E. She earned a B.S. in industrial engineering and then began programming text-based game as a HOBBY and went on to make what is considered one of the best games of all time.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--carousel slide-->
-        <div class="carousel-item">
-          <img class=" carousel-image w-100 car-item" src="/forming-allies/assets/images/scarlett.jpg" alt="Sasha Hostyn">
-          <div class="carousel-caption less-padding black-font">
-            <div class ="card">
-              <div class="card-body less-padding">
-                <h3 class="card-title games centered">Scarlett (Sasha Hostyn)</h3>
-                <p class='games'>Sasha Hostyn, popularly known as "Scarlett", is currently the top-earning female Esports player. She was the first woman to win a major StarCraft II tournament. In 2013, she climbed to global rank 21 and by 2014 she had won first place in seven tournaments.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--carousel slide-->
-        <div class="carousel-item">
-          <img class=" carousel-image w-100 car-item" src="/forming-allies/assets/images/liooon.png" alt="Xiaomeng Li">
-          <div class="carousel-caption less-padding black-font">
-            <div class ="card">
-              <div class="card-body less-padding">
-                <h3 class="card-title games centered">Liooon (Li, Xiaomeng)</h3>
-                <p class='games'>Liooon was the first woman to win the Hearthstone Grandmasters Global Finals, a BlizzCon Esports tournament. After winning this championship, she revealed that whilst in line for a tournament, a man once said to her  "If you are a girl, you should not wait in line here. It's not for you.". She encourages women to believe in themselves and participate despite the toxicity.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--carousel slide-->
-        <div class="carousel-item">
-          <img class=" carousel-image w-100 car-item" src="/forming-allies/assets/images/yoko.jpg" alt="Yoko Shimomura">
-          <div class="carousel-caption less-padding black-font">
-            <div class ="card">
-              <div class="card-body less-padding">
-                <h3 class="card-title games centered">Yoko Shimomura</h3>
-                <p class='games'>Yoko Shimomura is an extremely talented composer who primarily produces piano pieces. Her work can be heard in games such as Kingdom Hearts, Street Fighter, Final Fantasy XV and Super Smash Bros Ultimate and many others. The title track of Kingdom Hearts has been ranked the fourth-best RPG title track of all time.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--carousel slide-->
-        <div class="carousel-item">
-          <img class=" carousel-image w-100 car-item" src="/forming-allies/assets/images/kim.png" alt="Kim Swift">
-          <div class="carousel-caption less-padding black-font">
-            <div class ="card">
-              <div class="card-body less-padding">
-                <h3 class="card-title games centered">Kim Swift</h3>
-                <p class='games'>Kim Swift shot to fame in 2007 after designing Portal. Many critics cited Portal the best game of the year. It is estimated that around 8 million copies of Portal have been sold and it is undeniably one of the most famous games of the 2000s. Since Portal, Kim has worked on Left 4 Dead, Left 4 Dead 2 and Star Wars Battlefront II, all of which have been as massively popular as Portal.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="carousel-inner" id="womenContainer">
+
       </div>
       <!--carousel previous slide control-->
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -111,7 +40,36 @@
       <span class="sr-only">Next</span>
       </a>
     </div>
-    
+          <script>
+
+    // Load events from JSON
+    fetch('/forming-allies/assets/tables/women.json')
+      .then(response => response.json())
+      .then(women => {
+        const container = document.getElementById('womenContainer');
+          women.forEach((woman,idx) => {
+          const card = document.createElement('div');
+          if (idx==0) card.className = 'carousel-item active';
+          else card.className = 'carousel-item';
+          card.innerHTML = `
+            <img class=" carousel-image w-100 car-item" src="/forming-allies/assets/images/${woman.image}" alt="${woman.name}">
+            <div class="carousel-caption less-padding black-font">
+              <div class ="card">
+                <div class="card-body less-padding">
+                  <h3 class="card-title games centered">${woman.name}</h3>
+                  <p class='games'>${woman.bio}</p>
+                </div>
+              </div>
+            </div>
+          `;
+    container.insertBefore(card, container.firstChild);
+        });
+      })
+      .catch(error => {
+        document.getElementById('womenContainer').innerHTML = '<p>Error loading women.</p>';
+        console.error('Error loading women.json:', error);
+      });
+  </script>
     <script src="/forming-allies/assets/js/layout.js"></script>
     <input type="hidden" value="notable-women-nav" id="active-nav-title">
   </body>
