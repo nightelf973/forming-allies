@@ -35,7 +35,7 @@
             <div class="bg-white shadow rounded">
               <!--carousel-->
               <div class="carousel slide" id="carouselExampleIndicators" data-ride="carousel" data-interval="6000">
-                <div class="carousel-inner p-5">
+                <div id="testimonyContainer" class="carousel-inner p-5">
                   <!--carousel slide-->
                   
                 <!--carousel previous slide control-->
@@ -61,7 +61,7 @@
     fetch('/forming-allies/assets/tables/testimonies.json')
       .then(response => response.json())
       .then(testimonies => {
-        const container = document.getElementById('eventContainer');
+        const container = document.getElementById('testimonyContainer');
           testimonies.forEach((testimony,idx) => {
           const card = document.createElement('div');
           if (idx==0) card.className = 'carousel-item active';
@@ -82,8 +82,8 @@
         });
       })
       .catch(error => {
-        document.getElementById('eventContainer').innerHTML = '<p>Error loading events.</p>';
-        console.error('Error loading events.json:', error);
+        document.getElementById('testimonyContainer').innerHTML = '<p>Error loading testimoniess.</p>';
+        console.error('Error loading testimonies.json:', error);
       });
   </script>
     <script src="/forming-allies/assets/js/layout.js"></script>
