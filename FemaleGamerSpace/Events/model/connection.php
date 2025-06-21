@@ -1,3 +1,4 @@
+<!--no longer being used due to github Pages requiring static pages-->
 <?php
 Class dbObj{
 
