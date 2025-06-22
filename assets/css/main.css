@@ -14,6 +14,32 @@
   padding-left: 0px;
 }
 
+.card-columns-masonry .card-body{
+      border-top: 1px solid rgba(0, 0, 0, .125);
+}
+
+.card-columns-masonry {
+  column-gap: 30px;
+}
+
+.card-columns-masonry .card {
+  display: inline-block; /* prevents breaking across columns */
+  width: 100%;          /* full width inside column */
+  margin-bottom: 30px;  /* vertical gap between cards */
+}
+
+@media (min-width: 992px) {
+  .card-columns-masonry {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 672px) and (max-width:991px) {
+  .card-columns-masonry {
+    column-count: 2;
+  }
+}
+
 .form-check-input{
   left: 200px;
   top: 1px;
