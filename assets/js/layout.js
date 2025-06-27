@@ -1,9 +1,11 @@
 const navData = $('#nav-script');
 const activeInput = navData.data('active');
 const activeInputTwo = navData.data('activeTwo');
+const home = navData.data('home');
 
 let url = '../includes/navbar.html';
 if (activeInputTwo) url='../'+url;
+else if (home) url=url.slice(3);
 fetch(url)
   .then(response => response.text())
   .then(html => {
@@ -37,7 +39,7 @@ fetch(url)
         if (href) $(this).attr('href', prefix+href);
         if (src) $(this).attr('src', prefix+src);
       });
-    } else if (navData.data('home')){
+    } else if (home){
         $('nav a, nav .dropdown-item, nav img, video source').each(function () {
         const href = $(this).attr('href');
         const src = $(this).attr('src');
@@ -52,6 +54,7 @@ fetch(url)
 
 url = '../includes/footer.html';
 if (activeInputTwo) url='../'+url;
+else if (home) url=url.slice(3);
 fetch(url)
   .then(response => response.text())
   .then(html => {
