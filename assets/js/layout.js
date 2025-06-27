@@ -30,7 +30,7 @@ fetch(url)
     }
   })
   .then(() => {
-    if (activeInputTwo){
+    if (activeInput=='gameher-space-nav'){
       const prefix = '../';
       $('nav a, nav .dropdown-item, nav img, video source').not('.logout').each(function () {
         const href = $(this).attr('href');
