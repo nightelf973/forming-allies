@@ -16,8 +16,8 @@
       const params = new URLSearchParams(window.location.search);
       const postID = parseInt(params.get("id"));
       Promise.all([
-        fetch('../../assets/tables/posts.json').then(res => res.json()),
-        fetch('../../assets/tables/replies.json').then(res => res.json())
+        fetch('../assets/tables/posts.json').then(res => res.json()),
+        fetch('../assets/tables/replies.json').then(res => res.json())
       ])
       .then(([posts, replies]) => {
         let post = posts.find(p => p.id === postID);
