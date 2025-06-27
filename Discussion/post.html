@@ -41,7 +41,9 @@
           <h3 class="card-title text-dark games">${htmlSpecialChars(post.post)}</h3>
           <div class="card-subtitle">
           <p class="text-muted">${getFormattedDateTime(new Date(post.date))}</p>
-          <p class="text-muted"><strong>User: </strong>${post.username}</p>
+          <p class="text-muted"><strong>User: </strong><span`
+                        if (login&& post.username===username) html+=' class="post-creator"';
+          html+=`>${post.username}</span></p>
           </div>`;
         if (replies&&replies.length!=0){
           replies = replies.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -52,7 +54,9 @@
               <h4 class="card-title text-dark games">${htmlSpecialChars(reply.reply)}</h4>
               <div class="card-subtitle">
                 <p class="text-muted">${getFormattedDateTime(new Date(reply.date))}</p>
-                <p class="text-muted"><strong>User: </strong>${reply.username}</p>
+                <p class="text-muted"><strong>User: </strong><span`
+                if (login&& post.username===username) html+=' class="post-creator"';
+                html+=`>${reply.username}</span></p>
               </div>
             </div>`;
           });
