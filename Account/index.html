@@ -32,7 +32,7 @@
             localStorage.setItem(field.name,field.value);
           });
           localStorage.setItem('login', true);
-          location.reload();
+          window.location.href = "../";
         }
       });
       $('#loginForm').on('submit', function(event){
@@ -45,7 +45,7 @@
         });
         if (valid){
           localStorage.setItem('login', 'true');
-          location.reload();
+          window.location.href = "../";
         } else {
           var small = $(this).find('.info');
           small.html('Incorrect login details.');
