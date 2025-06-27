@@ -12,30 +12,30 @@
     <script defer>
     // Load events from JSON in place of sql (github Pages requires static pages)
       fetch('../assets/tables/testimonies.json')
-      .then(response => response.json())
-      .then(testimonies => {
-        const container = document.getElementById('testimonyContainer');
-        testimonies.forEach((testimony,idx) => {
-          const card = document.createElement('div');
-          if (idx==0) card.className = 'carousel-item active';
-          else card.className = 'carousel-item';
-          card.innerHTML = `
-            <div class="media d-flex flex-column flex-sm-row align-items-center align-items-sm-start">
-              <img class="rounded-circle img-thumbnail" src="../assets/images/icon.ico" alt="icon" width="75">
-              <div class="media-body ml-3 mt-3 mt-sm-0">
-                <blockquote class="blockquote border-0 p-0">
-                  <p class="font-italic lead"> <i class="fa fa-quote-left mr-3 text-success"></i>${testimony}&nbsp;&nbsp;<i class="fa fa-quote-right mr-3 text-success"></i></p>
-                  <footer class="blockquote-footer">Anonymous</footer>
-                </blockquote>
-              </div>
-            </div>`;
-          container.insertBefore(card, container.firstChild);
+        .then(response => response.json())
+        .then(testimonies => {
+          const container = $('#testimonyContainer');
+          testimonies.forEach((testimony,idx) => {
+            const isActive = idx === 0 ? 'active' : '';
+            let html = `
+              <div class="carousel-item ${isActive}">
+                <div class="media d-flex flex-column flex-sm-row align-items-center align-items-sm-start">
+                  <img class="rounded-circle img-thumbnail" src="../assets/images/icon.ico" alt="icon" width="75">
+                  <div class="media-body ml-3 mt-3 mt-sm-0">
+                    <blockquote class="blockquote border-0 p-0">
+                      <p class="font-italic lead"> <i class="fa fa-quote-left mr-3 text-success"></i>${testimony}&nbsp;&nbsp;<i class="fa fa-quote-right mr-3 text-success"></i></p>
+                      <footer class="blockquote-footer">Anonymous</footer>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>`;
+            container.prepend(html);
+          });
+        })
+        .catch(error => {
+          $('#testimonyContainer').html('<p>Error loading testimonies.</p>');
+          console.error('Error loading testimonies.json:', error);
         });
-      })
-      .catch(error => {
-        document.getElementById('testimonyContainer').innerHTML = '<p>Error loading testimoniess.</p>';
-        console.error('Error loading testimonies.json:', error);
-      });
     </script>
     <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">

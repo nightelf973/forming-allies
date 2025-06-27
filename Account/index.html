@@ -9,42 +9,48 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <script src="../assets/js/layout.js" defer data-active="account-nav" id="nav-script"></script>
+    <script defer type="module">
+      let login = localStorage.getItem('login');
+      let username = localStorage.getItem('username');
+      import {checkField} from '../assets/js/functions.js';
+      
+    </script>
     <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
     <meta name="author" content="Megan Ross">
     <title>Forming Allies</title>
     <link rel="icon" href="../assets/images/icon.ico">
   </head>
-  <body>
+  <body> 
     <div class = "content">
       <div class="container">
         <div class="row">
           <div class="signup col-sm-6">
             <div class="card headr">
-              <form method="POST" action="../controller/register.php">
+              <form id="registerForm">
                 <div class="card-body">
                   <h2 class="metal">Register</h2>
                   <div class="form-group">
-                    <input type="text" id="forename" class="form-control" name="forename" placeholder="Forename" required>
+                    <input type="text" id="forename" class="form-control" type="text" name="forename" placeholder="Forename" maxlength="30" required>
                     <span class="info"></span>
                   </div>
                   <div class="form-group">
-                    <input type="text" id="surname" class="form-control" name="surname" placeholder="Surname" required>
+                    <input type="text" id="surname" class="form-control" type="text" name="surname" placeholder="Surname" maxlength="30" required>
                     <span class="info"></span>
                   </div>
                   <div class="form-group">
-                    <input type="text" id="username" class="form-control" name="username" placeholder="Username" minlength="6" required>
+                    <input type="text" id="username" class="form-control" type="text" name="username" placeholder="Username" minlength="6" maxlenth="30" required>
                     <span class="info"></span>
                   </div>
                   <div class="form-group">
-                    <input type="text" id="email" class="form-control" name="email" placeholder="Email address" required>
+                    <input type="text" id="email" class="form-control" type="email" name="email" placeholder="Email address" maxlength="100" required>
                     <span class="info"></span>
                   </div>
                   <div class="form-group">
-                    <input type="password" id="password" class="form-control" name="password" placeholder="Password" minlength="8" required>
+                    <input type="password" id="password" class="form-control" type="password" name="password" placeholder="Password" maxlength="50" minlength="8" required>
                     <span class="info"></span>
                   </div>
                   <div class="form-group">
-                    <input type="password" id="conf_password" class="form-control" name="conf_password" placeholder="Confirm Password" minlength="8" required>
+                    <input type="password" id="conf_password" class="form-control" name="conf_password" placeholder="Confirm Password" maxlength="50" minlength="8" required>
                     <span class="info"></span>
                   </div>
                   <div class="form-group">
@@ -62,15 +68,15 @@
           </div>
           <div class="signup col-sm-6">
             <div class="card headr">
-              <form method="POST" action="../controller/login.php">
+              <form id="loginForm">
                 <div class="card-body">
                   <h2 class="metal">Sign In</h2>
                   <div class="form-group">
-                    <input type="text" class="form-control" name="email" placeholder="Email address" required>
+                    <input type="text" class="form-control" type="email" name="email" placeholder="Email address" maxlength="100" required>
                     <span class="info"></span>
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control" name="password" placeholder="Password" required>
+                    <input type="password" class="form-control" type="password" name="password" placeholder="Password" maxlength="50" minlength="8" required>
                     <span class="info"></span>
                   </div>
                 </div>

@@ -11,36 +11,34 @@
     <script defer>
     // Load events from JSON in place of sql (github Pages requires static pages)
       fetch('../../assets/tables/groups.json')
-      .then(response => response.json())
-      .then(groups => {
-        const container = document.getElementById('groupsContainer');
-        groups.forEach(group => {
-          const card = document.createElement('div');
-          card.className = 'card';
-          let html = `
-            <div class="card-header games h-100">
-              <h4><strong>${group.name}</strong></h4>
-            </div>
-            <img class="card-img-top" src="../../assets/images/${group.image}" alt="${group.name} logo"/>
-            <div class="card-body"><p class="games">${group.description}</p></div>
-            <div class="card-footer">`;
-          for (let i=0;i<group.buttons.length;i++){
-            html+=`<a href="${group.buttons[i].link}" target="_blank" class="btn btn-primary">${group.buttons[i].type}</a>`;
-          }
-          html+='</div>';
-          card.innerHTML = html;
-          container.appendChild(card);
+        .then(response => response.json())
+        .then(groups => {
+          const container = $('#groupsContainer');
+          groups.forEach(group => {
+            let html = `
+              <div class="card">
+                <div class="card-header games h-100">
+                  <h4><strong>${group.name}</strong></h4>
+                </div>
+                <img class="card-img-top" src="../../assets/images/${group.image}" alt="${group.name} logo"/>
+                <div class="card-body"><p class="games">${group.description}</p></div>
+                  <div class="card-footer">`;
+            for (let i=0;i<group.buttons.length;i++){
+              html+=`<a href="${group.buttons[i].link}" target="_blank" class="btn btn-primary">${group.buttons[i].type}</a>`;
+            }
+            html+='</div></div>';
+            container.append(html);
+          });
+        })
+        .catch(error => {
+          $('#groupsContainer').html('<p>Error loading groups.</p>');
+          console.error('Error loading groups.json:', error);
         });
-      })
-      .catch(error => {
-        document.getElementById('groupsContainer').innerHTML = '<p>Error loading groups.</p>';
-        console.error('Error loading groups.json:', error);
-      });
     </script>
     <link rel="stylesheet" type="text/css" href="../../assets/css/main.css">
     <meta name="author" content="Megan Ross">
     <title>Forming Allies</title>
-    <link rel="icon" href="../../assets/assets/images/icon.ico">
+    <link rel="icon" href="../../assets/images/icon.ico">
   </head>
   <body>
     <div id="items">

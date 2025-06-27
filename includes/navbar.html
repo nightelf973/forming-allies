@@ -1,6 +1,6 @@
 <script>
-  if (document.currentScript && window.top === window.self) {
-    window.location.href = '../'; 
+  if (document.currentScript && window.location.pathname.endsWith('navbar.html') && window.top === window.self) {
+    window.location.href = '../';
   }
 </script>
 <video playsinline autoplay muted loop id="backgroundvideo">

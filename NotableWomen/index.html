@@ -12,30 +12,30 @@
     <script defer>
       // Load events from JSON in place of sql (github Pages requires static pages)
       fetch('../assets/tables/women.json')
-      .then(response => response.json())
-      .then(women => {
-        const container = document.getElementById('womenContainer');
-        women.forEach((woman,idx) => {
-          const card = document.createElement('div');
-          if (idx==0) card.className = 'carousel-item active';
-          else card.className = 'carousel-item';
-          card.innerHTML = `
-            <img class=" carousel-image w-100 car-item" src="../assets/images/${woman.image}" alt="${woman.name}">
-            <div class="carousel-caption less-padding black-font">
-              <div class ="card">
-                <div class="card-body less-padding">
-                  <h3 class="card-title games centered">${woman.name}</h3>
-                  <p class='games'>${woman.bio}</p>
+        .then(response => response.json())
+        .then(women => {
+          const container = $('#womenContainer');
+          women.forEach((woman,idx) => {
+            const isActive = idx === 0 ? 'active' : '';
+            let html = `
+              <div class="carousel-item ${isActive}">
+                <img class=" carousel-image w-100 car-item" src="../assets/images/${woman.image}" alt="${woman.name}">
+                <div class="carousel-caption less-padding black-font">
+                  <div class ="card">
+                    <div class="card-body less-padding">
+                      <h3 class="card-title games centered">${woman.name}</h3>
+                      <p class='games'>${woman.bio}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>`;
-          container.insertBefore(card, container.firstChild);
+              </div>`;
+            container.prepend(html);
+          });
+        })
+        .catch(error => {
+          $('#womenContainer').html('<p>Error loading women.</p>');
+          console.error('Error loading women.json:', error);
         });
-      })
-      .catch(error => {
-        document.getElementById('womenContainer').innerHTML = '<p>Error loading women.</p>';
-        console.error('Error loading women.json:', error);
-      });
     </script>
     <script src="../assets/js/layout.js" defer></script>
     <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
