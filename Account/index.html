@@ -11,7 +11,7 @@
     <script src="../assets/js/layout.js" defer data-active="account-nav" id="nav-script"></script>
     <script defer type="module">
       const login = localStorage.getItem('login');
-      if (login) window.location.href = "/";
+      if (login) window.location.href = "../";
       const username = localStorage.getItem('username');
       import {checkField} from '../assets/js/functions.js';
       $('#registerForm .form-group input').on('input', function(){
