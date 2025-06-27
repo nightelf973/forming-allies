@@ -40,8 +40,33 @@
   }
 }
 
+.valid input {
+    border: solid 2px rgb(32, 241, 95) !important;
+}
+
+.invalid input {
+    border: solid 2px #a00 !important;
+}
+
+.form-group .info {
+    color: #a00;
+}
+
+small.invalid.info {
+    color: #a00;
+}
+
+.post-creator{
+  text-shadow: -1px -1px 0 pink, 1px -1px 0 pink, -1px  1px 0 pink, 1px  1px 0 pink;
+}
+
+.form-control:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
 .form-check-input{
-  left: 200px;
+  left: 210px;
   top: 1px;
   margin-left: 0px;
   width: auto !important;

@@ -11,6 +11,8 @@
     <script defer type="module">
     // Load events from JSON in place of sql (github Pages requires static pages)
       import { htmlSpecialChars, getFormattedDateTime } from '../assets/js/functions.js';
+      const login = localStorage.getItem('login');
+      const username = localStorage.getItem('username');
       fetch('../../assets/tables/posts.json')
         .then(response => response.json())
         .then(posts => {
@@ -27,7 +29,9 @@
                   <div class="card-body">
                     <h4 class='card-title games'>${htmlSpecialChars(post.post)}</h4>
                     <h6 class='card-subtitle text-muted'>${getFormattedDateTime(new Date(post.date))}</h6>
-                    <p><strong>User: </strong>${post.username}</p>
+                    <p><strong>User: </strong><span`;
+            if (login&& post.username===username) html+=' class="post-creator"';
+            html+=`>${post.username}</span></p>
                     <a type="button" class="btn btn-outline-secondary" href="post.html?id=${post.id}"> View Post </a>
                   </div>
                 </div>

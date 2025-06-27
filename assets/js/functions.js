@@ -74,5 +74,33 @@ export function updatePost(form) {
 }
 
 export function checkField(field) {
+  const val = field.val();
+  const pattern = field.data('regex');
+  const regex = new RegExp(pattern);
+  if (val.length==0) {
+    fieldInvalid(field,field.data('fieldname')+' cannot be blank.');
+  }
+  else if (regex && !regex.test(val)){
+    fieldInvalid(field, field.data('fieldname')+' is not valid.'+'<br>'+field.data('invalid'));
+  } else {
+    fieldValid(field);
+    return true;
+  }
+  return false;
+}
 
+function fieldInvalid(field, error){
+  var container = field.parent();
+  container.removeClass('valid');
+  container.addClass('invalid');
+  var small = container.find('.info');
+  small.html(error);
+}
+
+function fieldValid(field){
+  var container = field.parent();
+  container.removeClass('invalid');
+  container.addClass('valid');
+  var small = container.find('.info');
+  small.html('');
 }

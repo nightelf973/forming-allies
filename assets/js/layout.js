@@ -16,37 +16,42 @@ fetch(url)
     if (activeInputTwo) $(`#${activeInputTwo}`).addClass('active');
 
     if (localStorage.getItem("login") === "true") {
-      const discussion = document.getElementById('discussion-link');
+      const discussion = $('#discussion-link');
+      discussion.addClass('dropdown');
       const login = document.getElementById('login-logout-section');
-      $('#discussion-link').html(` 
-      <li class="nav-item dropdown">
+      discussion.html(` 
         <a id="discussion-nav" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Discussion</a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="../Discussion">Latest Posts</a>
           <a class="dropdown-item" href="../Discussion/myposts.html">My Posts</a>
           <a class="dropdown-item" href="../Discussion/createpost.html">Create Post</a>
-        </div>
-      </li>`);
-      $('#login-logout-section').html('<li><a id="account-nav" class="nav-link active" href="../Account/logout.html">Logout</a></li>');
+        </div>`);
+      $('#login-logout-section').html('<li><a id="account-nav" class="nav-link active logout" type="button" href="javascript:void(0)">Logout</a></li>');
     }
   })
   .then(() => {
     if (activeInputTwo){
       const prefix = '../';
-      $('nav a, nav .dropdown-item, nav img, video source').each(function () {
+      $('nav a, nav .dropdown-item, nav img, video source').not('.logout').each(function () {
         const href = $(this).attr('href');
         const src = $(this).attr('src');
+        console.log(href,src)
         if (href) $(this).attr('href', prefix+href);
         if (src) $(this).attr('src', prefix+src);
       });
     } else if (home){
-        $('nav a, nav .dropdown-item, nav img, video source').each(function () {
+        $('nav a, nav .dropdown-item, nav img, video source').not('.logout').each(function () {
         const href = $(this).attr('href');
         const src = $(this).attr('src');
         if (href) $(this).attr('href', href.slice(3));
         if (src) $(this).attr('src', src.slice(3));
       });
     }
+    $('.logout').on('click', function(event){
+      event.preventDefault();
+      localStorage.removeItem('login');
+      location.reload();
+    });
   })
   .catch(error => {
     console.error('Error loading navbar', error);
