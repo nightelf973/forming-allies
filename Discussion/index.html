@@ -13,7 +13,7 @@
       import { htmlSpecialChars, getFormattedDateTime } from '../assets/js/functions.js';
       const login = localStorage.getItem('login');
       const username = localStorage.getItem('username');
-      fetch('../../assets/tables/posts.json')
+      fetch('../assets/tables/posts.json')
         .then(response => response.json())
         .then(posts => {
           const localPosts = localStorage.getItem('posts');
