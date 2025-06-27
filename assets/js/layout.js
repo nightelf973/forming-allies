@@ -37,6 +37,13 @@ fetch(url)
         if (href) $(this).attr('href', prefix+href);
         if (src) $(this).attr('src', prefix+src);
       });
+    } else if (navData.data('home')){
+        $('nav a, nav .dropdown-item, nav img, video source').each(function () {
+        const href = $(this).attr('href');
+        const src = $(this).attr('src');
+        if (href) $(this).attr('href', href.slice(3));
+        if (src) $(this).attr('src', src.slice(3));
+      });
     }
   })
   .catch(error => {
