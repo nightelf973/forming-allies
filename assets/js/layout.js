@@ -3,10 +3,23 @@ const activeInput = navData.data('active');
 const activeInputTwo = navData.data('activeTwo');
 const home = navData.data('home');
 
-let url = '../includes/navbar.html';
-if (activeInputTwo) url='../'+url;
-else if (home) url=url.slice(3);
-fetch(url)
+function resolveUrl(baseUrl) {
+  if (activeInputTwo) return '../' + baseUrl;
+  if (home) return baseUrl.slice(3);
+  return baseUrl;
+}
+
+function adjustResourcePaths(prefixOrFn) {
+  $('nav a, nav .dropdown-item, nav img, video source').not('.logout').each(function () {
+    const $el = $(this);
+    const href = $el.attr('href');
+    const src = $el.attr('src');
+    if (href) $el.attr('href', typeof prefixOrFn === 'function' ? prefixOrFn(href) : prefixOrFn + href);
+    if (src) $el.attr('src', typeof prefixOrFn === 'function' ? prefixOrFn(src) : prefixOrFn + src);
+  });
+}
+
+fetch(resolveUrl('../includes/navbar.html'))
   .then(response => response.text())
   .then(html => {
     $('body').prepend(html);
@@ -14,7 +27,6 @@ fetch(url)
   .then(() => {
     if (activeInput) $(`#${activeInput}`).addClass('active'); 
     if (activeInputTwo) $(`#${activeInputTwo}`).addClass('active');
-
     if (localStorage.getItem("login") === "true") {
       const discussion = $('#discussion-link');
       discussion.addClass('dropdown');
@@ -30,37 +42,14 @@ fetch(url)
     }
   })
   .then(() => {
-    if (activeInput=='gameher-space-nav'){
-      const prefix = '../';
-      $('nav a, nav .dropdown-item, nav img, video source').not('.logout').each(function () {
-        const href = $(this).attr('href');
-        const src = $(this).attr('src');
-        console.log(href,src)
-        if (href) $(this).attr('href', prefix+href);
-        if (src) $(this).attr('src', prefix+src);
-      });
-    } else if (home){
-        $('nav a, nav .dropdown-item, nav img, video source').not('.logout').each(function () {
-        const href = $(this).attr('href');
-        const src = $(this).attr('src');
-        if (href) $(this).attr('href', href.slice(3));
-        if (src) $(this).attr('src', src.slice(3));
-      });
-    }
-    $('.logout').on('click', function(event){
-      event.preventDefault();
-      localStorage.removeItem('login');
-      location.reload();
-    });
+    if (activeInput=='gameher-space-nav') adjustResourcePaths('../');
+    else if (home) adjustResourcePaths(str => str.slice(3));
   })
   .catch(error => {
     console.error('Error loading navbar', error);
   });
 
-url = '../includes/footer.html';
-if (activeInputTwo) url='../'+url;
-else if (home) url=url.slice(3);
-fetch(url)
+fetch(resolveUrl('../includes/footer.html'))
   .then(response => response.text())
   .then(html => {
     $('body').append(html);
@@ -68,3 +57,9 @@ fetch(url)
   .catch(error => {
     console.error('Error loading footer', error);
   });
+
+$(document).on('click', '.logout', function(event) {
+  event.preventDefault();
+  localStorage.removeItem('login');
+  location.reload();
+});

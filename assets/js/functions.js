@@ -36,8 +36,9 @@ export function deletePost(id) {
 }
 
 export function reply(form) {
+  const postID = parseInt(form.postID.value, 10);
   const newReply = {
-    postid: parseInt(form.postID.value, 10),
+    postid: postID,
     username: localStorage.getItem('username'),
     reply: form.replyText.value.trim(),
     date: new Date().toISOString()
@@ -47,9 +48,25 @@ export function reply(form) {
   localReplies.push(newReply);
   localStorage.setItem('replies', JSON.stringify(localReplies));
   form.replyText.value = '';
+  showToastAndRedirect('Reply saved!', `post.html?id=${postID}`);
+}
 
-  $('.toast-body').text('Reply saved!');
-  $('.toast').toast('show');
+export function createPost(form) {
+  let localPosts = JSON.parse(localStorage.getItem('posts')) || [];
+  let postID = 5;
+  if (localPosts.length > 0){
+  const highID = Math.max(...localPosts.map(post => post.id));
+    postID = highID+1;
+  }
+  const newPost = {
+    id: postID,
+    post: form.postText.value.trim(),
+    date: new Date().toISOString(),
+    username: localStorage.getItem('username')
+  };
+  localPosts.push(newPost);
+  localStorage.setItem('posts', JSON.stringify(localPosts));
+  showToastAndRedirect('Post created!', `post.html?id=${postID}`);
 }
 
 export function updatePost(form) {
@@ -57,12 +74,10 @@ export function updatePost(form) {
   const updatedText = form.question.value.trim();
 
   let localPosts = JSON.parse(localStorage.getItem('posts')) || [];
-  let postIndex = localPosts.findIndex(p => p.id === postID);
+  const postIndex = localPosts.findIndex(p => p.id === postID);
 
   if (postIndex === -1) {
-    console.error(`Post with id ${postID} not found.`);
-    $('.toast-body').text('Something went wrong.');
-    $('.toast').toast('show');
+    showToastAndRedirect(`Post with id ${postID} not found.`, 'index.html');
     return;
   }
 
@@ -70,7 +85,7 @@ export function updatePost(form) {
   localPosts[postIndex].date = new Date().toISOString();
 
   localStorage.setItem('posts', JSON.stringify(localPosts));
-  window.location.href = `post.html?id=${postID}`;
+  showToastAndRedirect('Post updated!', `post.html?id=${postID}`);
 }
 
 export function checkField(field) {
@@ -89,18 +104,42 @@ export function checkField(field) {
   return false;
 }
 
+export function checkAnswer(answer, correctanswer, id, info){
+  let message = $('#message' + id); // jQuery selector
+  let msg;
+  let className ='incorrect';
+  if (answer == correctanswer) {
+    msg = `<br> Well done! The percentage was ${correctanswer}%<br><br>${info}`;
+    className='correct';
+  } else if (answer < correctanswer + 10 && answer > correctanswer - 10) {
+    className='almost';
+    msg = `<br> Close! The actual percentage was ${correctanswer}%<br><br>${info}`;
+  } else {
+    msg = `<br> Unlucky! The actual percentage was ${correctanswer}%<br><br>${info}`;
+  }
+  message.html(msg).attr('class',className);
+}
+
 function fieldInvalid(field, error){
-  var container = field.parent();
+  const container = field.parent();
   container.removeClass('valid');
   container.addClass('invalid');
-  var small = container.find('.info');
+  const small = container.find('.info');
   small.html(error);
 }
 
 function fieldValid(field){
-  var container = field.parent();
+  const container = field.parent();
   container.removeClass('invalid');
   container.addClass('valid');
-  var small = container.find('.info');
+  const small = container.find('.info');
   small.html('');
+}
+
+function showToastAndRedirect(message, redirectUrl) {
+  $('.toast-body').text(message);
+  $('.toast').toast('show');
+  setTimeout(() => {
+    window.location.href = redirectUrl;
+  }, 3000);
 }

@@ -8,13 +8,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../assets/js/layout.js" defer data-active="discussion-nav" id="nav-script"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+    <meta name="author" content="Megan Ross">
+    <title>Forming Allies</title>
+    <link rel="icon" href="../assets/images/icon.ico">
+  </head>
+  <body>
+    <div id="postContainer" class="container">
+    </div>
+    <div role="alert" aria-live="assertive" aria-atomic="true" class="toast hide" data-delay="10000" style="position: fixed; top: 10px; right: 25px;z-index:1100">
+      <div class="toast-header">
+        <i class="fa fa-exclamation-circle" style="color: rgb(126, 8, 73);font-size:1.25em" aria-hidden="true"></i>
+        <strong class="mr-auto">&nbsp;&nbsp;Forming Allies</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">x</span>
+        </button>
+      </div>
+      <div class="toast-body" id="toast-body"></div>
+    </div>
     <script type="module" defer>
     // Load events from JSON in place of sql (github Pages requires static pages)
-      let login = localStorage.getItem('login');
-      let username = localStorage.getItem('username');
       import { htmlSpecialChars, getFormattedDateTime, deletePost, reply } from '../assets/js/functions.js';
+      const login = localStorage.getItem('login');
+      const username = localStorage.getItem('username');
       const params = new URLSearchParams(window.location.search);
       const postID = parseInt(params.get("id"));
+      const container = $('#postContainer'); 
       Promise.all([
         fetch('../assets/tables/posts.json').then(res => res.json()),
         fetch('../assets/tables/replies.json').then(res => res.json())
@@ -27,36 +46,35 @@
             post = JSON.parse(localPosts).find(p => p.id === postID);
             if (!post) window.location.href = "index.html";
           } else {
-            window.location.href = "index.html"
+            window.location.href = "index.html";
           }
         }
         const localReplies = localStorage.getItem('replies');
         if (localReplies) replies = replies.concat(JSON.parse(localReplies));
-        replies = replies.filter(reply => reply.postid === post.id);
-        const container = $('#postContainer'); 
+        replies = replies.filter(reply => reply.postid === post.id).sort((a, b) => new Date(b.date) - new Date(a.date));
         let html = `
           <div class="card headr">
-          <div class="card-body">
           <div class="card-body">
           <h3 class="card-title text-dark games">${htmlSpecialChars(post.post)}</h3>
           <div class="card-subtitle">
           <p class="text-muted">${getFormattedDateTime(new Date(post.date))}</p>
-          <p class="text-muted"><strong>User: </strong><span`
-                        if (login&& post.username===username) html+=' class="post-creator"';
-          html+=`>${post.username}</span></p>
+          <p class="text-muted">
+            <strong>User: </strong>
+            <span${login && post.username === username ? ' class="post-creator"' : ''}>${post.username}</span>
+          </p>
           </div>`;
-        if (replies&&replies.length!=0){
-          replies = replies.sort((a, b) => new Date(b.date) - new Date(a.date));
+        if (replies.length>0){
           html+='<h4>Comments:</h4>';
-          replies.forEach((reply, i) => {
+          replies.forEach(reply => {
           html+=`
             <div class="card button-margin answer-padding">
               <h4 class="card-title text-dark games">${htmlSpecialChars(reply.reply)}</h4>
               <div class="card-subtitle">
                 <p class="text-muted">${getFormattedDateTime(new Date(reply.date))}</p>
-                <p class="text-muted"><strong>User: </strong><span`
-                if (login&& post.username===username) html+=' class="post-creator"';
-                html+=`>${reply.username}</span></p>
+                <p class="text-muted">
+                  <strong>User: </strong>
+                  <span${login && reply.username === username ? ' class="post-creator"' : ''}>${reply.username}</span>
+                </p>
               </div>
             </div>`;
           });
@@ -66,7 +84,7 @@
         if (login=== "true" && username=== post.username){
           html += `<a id="delete-post-btn" type="button" class="btn btn-primary button-margin" href="javascript:void(0)">Delete Post</a>`;
         }
-        html+='</div></div></div>';
+        html+='</div></div>';
         if (login==="true"){
           html+=`
             <form class="nav-margin" id="replyForm">
@@ -89,26 +107,9 @@
         });
       })
       .catch(error => {
-          console.error('Error loading JSON files: posts.json and replies.json', error);
+          container.html('<p>Error loading posts and/or replies.</p>');
+          console.error('Error loading JSON files: posts.json and/or replies.json', error);
       });
     </script>
-    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
-    <meta name="author" content="Megan Ross">
-    <title>Forming Allies</title>
-    <link rel="icon" href="../assets/images/icon.ico">
-  </head>
-  <body>
-    <div id="postContainer" class="container">
-    </div>
-    <div role="alert" aria-live="assertive" aria-atomic="true" class="toast hide" data-delay="10000" style="position: fixed; top: 10px; right: 25px;z-index:1100">
-        <div class="toast-header">
-            <i class="fa fa-exclamation-circle" style="color: rgb(126, 8, 73);font-size:1.25em" aria-hidden="true"></i>
-            <strong class="mr-auto">&nbsp;&nbsp;Forming Allies</strong>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-            <span aria-hidden="true">x</span>
-            </button>
-        </div>
-        <div class="toast-body" id="toast-body"></div>
-    </div>
   </body>
 </html>

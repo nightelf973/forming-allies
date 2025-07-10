@@ -1,0 +1,44 @@
+[
+  {
+    "id":1,
+    "question":"Sexual Harassment can be defined as any act perceived as having sexual intent that makes an individual uncomfortable. Based on this definition, have you ever been sexually harassed whilst playing a video game?",
+    "answer":75,
+    "extrainfo":"For reference, upon interviewing (~100) non-female participants, only 5% admitted to sexually harassing a female gamer in a video game."
+  },
+  {
+    "id":2,
+    "question":"Have you ever WITNESSED sexual harassment towards another female gamer whilst playing a video game?",
+    "answer":86,
+    "extrainfo":"Upon interviewing (~100) non-female participants, 67% said YES to this question."
+  },
+  {
+    "id":3,
+    "question":"If you answered \"YES\" to question 2, did a female gamer call out the negative behaviour and provide support to the person being harassed?",
+    "answer":36,
+    "extrainfo":""
+  },
+  {
+    "id":4,
+    "question":"If you answered \"YES\" to question 2, did a male gamer call out the negative behaviour and provide support to the person being harassed?",
+    "answer":24,
+    "extrainfo":"Of the (~100) non-female participants interviewed, 53% claimed they call out negative behaviour and provide support to female gamers being harassed."
+  },
+  {
+    "id":5,
+    "question":"Have you ever been verbally abused whilst playing a video game and it has been suggested that women should not play video games?",
+    "answer":83,
+    "extrainfo":"When asked this question from the reverse perspective, only 8% of (~100) non-female participants admitted to verbally abusing female gamers and inherent sexism."
+  },
+  {
+    "id":6,
+    "question":"How readily available do you feel information about the harassment of women within gaming is? (1-no information, 100-extremely widespread information)",
+    "answer":48,
+    "extrainfo":"This is the one question where the female and non-female interview perspectives matched up! Non-female participants also agreed that on a scale of 1-100, the availability of information related to the harassment of women within gaming lies at around 48."
+  },
+  {
+    "id":7,
+    "question":"If people were provided with information on how to be an ally for women being harassed in video games, would you feel more comfortable within multiplayer/online games?",
+    "answer":80,
+    "extrainfo":"When non-female participants were asked 'If you were provided with information on how to be an ally for women being harassed in video games, would you more actively look out for these situations and try to help them?', 76% said \"YES\""
+  }
+]

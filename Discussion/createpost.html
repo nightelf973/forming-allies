@@ -15,48 +15,32 @@
   </head>
   <body>
     <div class = "content">
-      <div class="container" id="postContainer">
-      </div>
-    </div>
-    <script type="module" defer>
-      import { htmlSpecialChars, getFormattedDateTime, updatePost} from '../assets/js/functions.js';
-      const login = localStorage.getItem('login');
-      const username = localStorage.getItem('username');
-      const params = new URLSearchParams(window.location.search);
-      const postID = parseInt(params.get("id"));
-      let posts = JSON.parse(localStorage.getItem('posts')) || [];
-      const post = posts.find(p => p.id === postID);
-      if (!post) window.location.href = "index.html";
-      const html = `
-        <div class="card headr">
-          <div class="card-body">
-            <h4 class="card-title text-dark">${htmlSpecialChars(post.post)}</h4>
-            <div class="card-subtitle">
-              <p class="text-muted">${getFormattedDateTime(new Date(post.date))}</p>
-              <p class="text-muted"><strong>User: </strong>${post.username}</p>
-            </div>
-          </div>
-        </div>
+      <div class="container">
+        <!--using card to display create post form-->
         <div class="signup col-sm-10">
-          <div class="card nav-margin">
-            <form id="updateForm">
+          <div class="card headr">
+            <form id="postForm">
               <div class="card-body">
-                <h2 class="metal">Update Post</h2>
+                <h3 class="games"><strong>Create Post</strong></h3>
+                <!-- form post input-->
                 <div class="form-group">
-                  <textarea class="form-control" name="question" id="question" placeholder="Input post" required>${htmlSpecialChars(post.post)}</textarea>
+                  <textarea class="form-control" name="postText" id="question" placeholder="Input post" required></textarea>
                 </div>
               </div>
               <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <!--form submit button-->
+                <button name='create-submit' type='submit' class='btn btn-primary'>Submit</button>
               </div>
-              <input type="hidden" name="postID" value="${post.id}"/>
             </form>
           </div>
-        </div>`;
-      $('#postContainer').html(html);
-      $('#updateForm').on('submit', function(event) {
+        </div>
+      </div>
+    </div>
+    <script defer type="module">
+      import {createPost} from '../assets/js/functions.js';
+      $('#postForm').on('submit', function(event){
         event.preventDefault();
-        updatePost(this);
+        createPost(this);
       });
     </script>
   </body>

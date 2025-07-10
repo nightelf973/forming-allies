@@ -48,8 +48,16 @@
     border: solid 2px #a00 !important;
 }
 
-.form-group .info {
+.form-group .info, .form-group .incorrect {
     color: #a00;
+}
+
+.form-group .correct{
+  color: rgb(17, 151, 57);
+}
+
+.form-group .almost{
+  color: rgb(241, 192, 32);
 }
 
 small.invalid.info {

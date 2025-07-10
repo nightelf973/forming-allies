@@ -15,16 +15,17 @@
   </head>
   <body>
     <div class="container mt-20">
+      <!--using card to display heading-->
       <div class ="card headr">
         <div class="card-body">
-          <h3 class="card-title games"><strong>Latest Posts</strong></h3>
+          <h3 class="card-title games"><strong>My Posts</strong></h3>
         </div>
       </div>
+      <!--using card deck to display posts-->
       <div class="card-deck" id="postsContainer">
       </div>
     </div>
     <script defer type="module">
-    // Load events from JSON in place of sql (github Pages requires static pages)
       import { htmlSpecialChars, getFormattedDateTime } from '../assets/js/functions.js';
       const login = localStorage.getItem('login');
       const username = localStorage.getItem('username');
@@ -36,23 +37,35 @@
           if (localPosts){
             posts = posts.concat(JSON.parse(localPosts));
           }
-          posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+          posts=posts.filter(p => p.username === username).sort((a, b) => new Date(b.date) - new Date(a.date));
+          if (posts&&posts.length>0){
           posts.forEach(post => {
-            const isOwner = login && post.username === username;
             let html=`
               <div class="col-md-4">
                 <div class="card nav-margin">
                   <div class="card-body">
-                    <h4 class='card-title games'>${htmlSpecialChars(post.post)}</h4>
-                    <h6 class='card-subtitle text-muted'>${getFormattedDateTime(new Date(post.date))}</h6>
+                    <h4 class="card-title games">${htmlSpecialChars(post.post)}</h4>
+                    <h6 class="card-subtitle text-muted">${getFormattedDateTime(new Date(post.date))}</h6>
                     <strong>User: </strong>
-                    <span${login&& post.username===username ? ' class="post-creator"' : ''}>${post.username}</span>
-                    <a class="btn btn-outline-secondary" href="post.html?id=${post.id}"> View Post </a>
+                    <span class="post-creator">${post.username}</span>
+                    <a type="button" class="btn btn-outline-secondary" href="post.html?id=${post.id}"> View Post </a>
                   </div>
                 </div>
               </div>`;
             container.append(html);
           });
+          } else {
+            let html=`
+              <div class="col-lg-6 offset-lg-3">
+                <div class="card my-4">		
+                  <div class="card-body">
+                    <h3 class="card-title games"> You do not have any posts yet.</h3>
+                    <a type="button" class="btn btn-outline-secondary" href="createpost.html"> Create Post </a>
+                  </div>
+                </div>
+              </div>`;
+            container.append(html);
+          }
         })
         .catch(error => {
           container.html('<p>Error loading events.</p>');
